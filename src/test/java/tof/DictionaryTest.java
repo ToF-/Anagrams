@@ -27,4 +27,9 @@ public class DictionaryTest {
 		dictionary.add("cinema");
 		assertEquals(Arrays.asList("cinema"), dictionary.anagrams("iceman"));
 	}
+	@Test
+	public void ShouldReturnAnyKnownAnagram() {
+		dictionary.add("life");
+		assertEquals(Arrays.asList("life"), dictionary.anagrams("file"));
+	}
 }
