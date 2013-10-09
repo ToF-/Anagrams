@@ -1,11 +1,12 @@
 package tof;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dictionary {
 
-	public Object anagrams(String string) {
-		return new ArrayList();
+	public List<String> anagrams(String string) {
+		return new ArrayList<String>();
 	}
 
 }

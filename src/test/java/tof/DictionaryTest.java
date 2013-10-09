@@ -11,6 +11,6 @@ public class DictionaryTest {
 	@Test
 	public void ShouldYieldEmptyListWhenNoAnagramFound() {
 		Dictionary dictionary = new Dictionary();
-		assertEquals(new ArrayList(), dictionary.anagrams("notaword"));
+		assertEquals(new ArrayList<String>(), dictionary.anagrams("notaword"));
 	}
 }
