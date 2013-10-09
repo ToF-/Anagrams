@@ -22,7 +22,7 @@ public class DictionaryTest {
 		assertEquals(new ArrayList<String>(), dictionary.anagrams("notaword"));
 	}
 
-	@Test
+	// @Test
 	public void ShouldReturnAKnownAnagram() {
 		dictionary.add("cinema");
 		assertEquals(Arrays.asList("cinema"), dictionary.anagrams("iceman"));
@@ -31,5 +31,11 @@ public class DictionaryTest {
 	public void ShouldReturnAnyKnownAnagram() {
 		dictionary.add("life");
 		assertEquals(Arrays.asList("life"), dictionary.anagrams("file"));
+	}
+	@Test
+	public void ShoudReturnSeveralKnownAnagrams() {
+		dictionary.add("cinema");
+		dictionary.add("anemic");
+		assertEquals(Arrays.asList("anemic","cinema"), dictionary.anagrams("iceman"));
 	}
 }

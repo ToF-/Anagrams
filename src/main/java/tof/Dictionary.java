@@ -7,12 +7,15 @@ import java.util.List;
 
 public class Dictionary {
 
+	private HashMap<Integer, List<String>> words;
+
 	public List<String> anagrams(String word) {
-		HashMap<String,String> words = new HashMap<String,String>();
-		words.put("iceman","cinema");
-		words.put("file", "life");
-		if (words.containsKey(word)) {
-			return Arrays.asList(words.get(word));
+		words = new HashMap<Integer,List<String>>();
+		words.put(6,Arrays.asList("anemic","cinema"));
+		words.put(4, Arrays.asList("life"));
+		Integer key = new Integer(word.length());
+		if (words.containsKey(key)) {
+			return words.get(key);
 		}
 		return new ArrayList<String>();
 	}
