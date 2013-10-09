@@ -12,4 +12,8 @@ public class Dictionary {
 		return new ArrayList<String>();
 	}
 
+	public void add(String string) {
+		
+	}
+
 }
