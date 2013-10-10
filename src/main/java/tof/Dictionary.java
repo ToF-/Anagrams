@@ -17,19 +17,17 @@ public class Dictionary {
 		String key = key(word);
 		ArrayList<String> result = new ArrayList<String>();
 		if (words.containsKey(key)) 
-			for(String anagram : words.get(key)) {
+			for(String anagram : words.get(key)) 
 				if(!anagram.equals(word))
 					result.add(anagram);
-			}
 		return result;
 	}
 
 	private String key(String word) {
 		char[] chars = word.toCharArray();
-		for(int i=0; i < chars.length; i++) {
+		for(int i=0; i < chars.length; i++) 
 			if(!Character.isLetter(chars[i]))
 				chars[i] = ' ';
-		}
         Arrays.sort(chars);
         return new String(chars).trim();
 	}
