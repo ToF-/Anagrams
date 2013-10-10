@@ -26,8 +26,12 @@ public class Dictionary {
 
 	private String key(String word) {
 		char[] chars = word.toCharArray();
+		for(int i=0; i < chars.length; i++) {
+			if(!Character.isLetter(chars[i]))
+				chars[i] = ' ';
+		}
         Arrays.sort(chars);
-        return new String(chars);
+        return new String(chars).trim();
 	}
 
 	public void add(String word) {

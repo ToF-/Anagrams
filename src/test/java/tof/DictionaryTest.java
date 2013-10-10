@@ -60,4 +60,8 @@ public class DictionaryTest {
 		assertFalse(dictionary.areAnagrams("life","lead"));
 		assertTrue(dictionary.areAnagrams("lead","deal"));
 	}
+	@Test
+	public void ShouldTellIfTwoPhrasesAreAnagrams() {
+		assertTrue(dictionary.areAnagrams("evangelist","evil's agent"));
+	}
 }
