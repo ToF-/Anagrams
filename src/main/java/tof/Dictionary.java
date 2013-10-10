@@ -2,7 +2,6 @@ package tof;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,14 +31,9 @@ public class Dictionary {
 	}
 
 	public void add(String word) {
-
 		String key = key(word);
-		if(words.containsKey(key)) {
-			words.get(key).add(word);
-		}
-		else {
+		if(!words.containsKey(key)) 
 			words.put(key, new ArrayList<String>());
-			words.get(key).add(word);
-		}
+		words.get(key).add(word);
 	}
 }
