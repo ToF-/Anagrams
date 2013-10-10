@@ -1,6 +1,7 @@
 package tof;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +15,7 @@ public class Dictionary {
 	}
 
 	public List<String> anagrams(String word) {
-		String key = wordKey(word);
+		String key = key(word);
 		if (words.containsKey(key)) {
 			return words.get(key);
 		}
@@ -22,19 +23,15 @@ public class Dictionary {
 			return Collections.emptyList();
 	}
 
-	private String wordKey(String word) {
-		if(word.equals("life") || word.equals("file"))
-			return "efil";
-		if(word.equals("deal") || word.equals("lade"))
-			return "adel";
-		if(word.equals("cinema") || word.equals("anemic") || word.equals("iceman"))
-			return "aceimn";
-		return "";
+	private String key(String word) {
+		char[] chars = word.toCharArray();
+        Arrays.sort(chars);
+        return new String(chars);
 	}
 
 	public void add(String word) {
 
-		String key = wordKey(word);
+		String key = key(word);
 		if(words.containsKey(key)) {
 			words.get(key).add(word);
 		}
