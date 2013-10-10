@@ -2,25 +2,35 @@ package tof;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 public class Dictionary {
 
 	private HashMap<Integer, List<String>> words;
+	
+	public Dictionary() {
+		words = new HashMap<Integer,List<String>>();
+	}
 
 	public List<String> anagrams(String word) {
-		words = new HashMap<Integer,List<String>>();
-		words.put(6,Arrays.asList("anemic","cinema"));
-		words.put(4, Arrays.asList("life"));
 		Integer key = new Integer(word.length());
 		if (words.containsKey(key)) {
 			return words.get(key);
 		}
-		return new ArrayList<String>();
+		return Collections.emptyList();
 	}
 
-	public void add(String string) {
-		
+	public void add(String word) {
+
+		Integer key = new Integer(word.length());
+		if(words.containsKey(key)) {
+			words.get(key).add(word);
+		}
+		else {
+			words.put(key, new ArrayList<String>());
+			words.get(key).add(word);
+		}
 	}
 }

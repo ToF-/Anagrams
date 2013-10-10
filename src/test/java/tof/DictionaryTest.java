@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +21,7 @@ public class DictionaryTest {
 
 	@Test
 	public void ShouldYieldEmptyListWhenNoAnagramFound() {
-		assertEquals(new ArrayList<String>(), dictionary.anagrams("notaword"));
+		assertEquals(Collections.emptyList(), dictionary.anagrams("notaword"));
 	}
 
 	// @Test
@@ -36,6 +38,8 @@ public class DictionaryTest {
 	public void ShoudReturnSeveralKnownAnagrams() {
 		dictionary.add("cinema");
 		dictionary.add("anemic");
-		assertEquals(Arrays.asList("anemic","cinema"), dictionary.anagrams("iceman"));
+		List<String> anagrams = dictionary.anagrams("iceman"); 
+		assertTrue(anagrams.contains("cinema"));
+		assertTrue(anagrams.contains("anemic"));
 	}
 }
