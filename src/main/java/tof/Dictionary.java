@@ -16,11 +16,13 @@ public class Dictionary {
 
 	public List<String> anagrams(String word) {
 		String key = key(word);
-		if (words.containsKey(key)) {
-			return words.get(key);
-		}
-		else
-			return Collections.emptyList();
+		ArrayList<String> result = new ArrayList<String>();
+		if (words.containsKey(key)) 
+			for(String anagram : words.get(key)) {
+				if(!anagram.equals(word))
+					result.add(anagram);
+			}
+		return result;
 	}
 
 	private String key(String word) {

@@ -48,4 +48,11 @@ public class DictionaryTest {
 		dictionary.add("deal");
 		assertEquals(Arrays.asList("deal"), dictionary.anagrams("lade"));
 	}
+	@Test
+	public void ShouldNotReturnTheWordSearchedForAnagrams() {
+		dictionary.add("life");
+		dictionary.add("file");
+		List<String> anagrams = dictionary.anagrams("life");
+		assertEquals(Arrays.asList("file"), anagrams);
+	}
 }
