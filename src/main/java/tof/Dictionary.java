@@ -36,4 +36,8 @@ public class Dictionary {
 			words.put(key, new ArrayList<String>());
 		words.get(key).add(word);
 	}
+
+	public boolean areAnagrams(String a, String b) {
+		return key(a).equals(key(b));
+	}
 }

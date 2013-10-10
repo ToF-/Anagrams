@@ -55,4 +55,9 @@ public class DictionaryTest {
 		List<String> anagrams = dictionary.anagrams("life");
 		assertEquals(Arrays.asList("file"), anagrams);
 	}
+	@Test
+	public void ShouldTellIfTwoWordsAreAnagrams() {
+		assertFalse(dictionary.areAnagrams("life","lead"));
+		assertTrue(dictionary.areAnagrams("lead","deal"));
+	}
 }
