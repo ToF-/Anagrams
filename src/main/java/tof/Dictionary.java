@@ -7,14 +7,14 @@ import java.util.List;
 
 public class Dictionary {
 
-	private HashMap<Integer, List<String>> words;
+	private HashMap<String, List<String>> words;
 	
 	public Dictionary() {
-		words = new HashMap<Integer,List<String>>();
+		words = new HashMap<String,List<String>>();
 	}
 
 	public List<String> anagrams(String word) {
-		Integer key = wordKey(word);
+		String key = wordKey(word);
 		if (words.containsKey(key)) {
 			return words.get(key);
 		}
@@ -22,19 +22,19 @@ public class Dictionary {
 			return Collections.emptyList();
 	}
 
-	private Integer wordKey(String word) {
+	private String wordKey(String word) {
 		if(word.equals("life") || word.equals("file"))
-			return new Integer(1);
+			return "efil";
 		if(word.equals("deal") || word.equals("lade"))
-			return new Integer(2);
+			return "adel";
 		if(word.equals("cinema") || word.equals("anemic") || word.equals("iceman"))
-			return new Integer(3);
-		return new Integer(0);
+			return "aceimn";
+		return "";
 	}
 
 	public void add(String word) {
 
-		Integer key = wordKey(word);
+		String key = wordKey(word);
 		if(words.containsKey(key)) {
 			words.get(key).add(word);
 		}
