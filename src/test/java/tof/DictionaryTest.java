@@ -42,4 +42,10 @@ public class DictionaryTest {
 		assertTrue(anagrams.contains("cinema"));
 		assertTrue(anagrams.contains("anemic"));
 	}
+	@Test
+	public void ShoulReturnAnagramBasedOnSameLetters() {
+		dictionary.add("life");
+		dictionary.add("deal");
+		assertEquals(Arrays.asList("deal"), dictionary.anagrams("lade"));
+	}
 }
